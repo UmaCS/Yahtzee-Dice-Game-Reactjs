@@ -50,7 +50,7 @@ class Game extends Component {
     this.setState(st => ({
       locked: [
         ...st.locked.slice(0, idx),
-        !st.locked[idx],
+       (st.rollsLeft > 0 ? !st.locked[idx] : st.locked[idx]),
         ...st.locked.slice(idx + 1)
       ]
     }));
